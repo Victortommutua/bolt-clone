@@ -3,8 +3,45 @@ import Image from 'next/image'
 import React from 'react'
 
 function Footer() {
+    const socialAccounts = [
+        {
+          id: 1,
+          name: "Facebook",
+          imageSrc: "/facebook.svg",
+          imageAlt: "Facebook-img",
+          href: "https://www.facebook.com/Bolt/",
+        },
+        {
+            id: 2,
+            name: "Twitter",
+            imageSrc: "/twitter.svg",
+            imageAlt: "twitter-img",
+            href: "https://twitter.com/Boltapp/",
+          },
+        {
+          id: 3,
+          name: "Instagram",
+          imageSrc: "/instagram.svg",
+          imageAlt: "instagram-img",
+          href: "https://www.instagram.com/bolt/",
+        },
+        {
+          id: 4,
+          name: "LinkedIn",
+          imageSrc: "/linkedin.svg",
+          imageAlt: "LinkedIn-img",
+          href: "https://www.linkedin.com/company/bolt-eu/",
+        },
+        {
+            id: 5,
+            name: "Tiktok",
+            imageSrc: "/tiktok.svg",
+            imageAlt: "tiktok-img",
+            href: "https://vm.tiktok.com/ZMdwm5Y8E/",
+          },
+      ]
   return (
-      <div className='md:flex xl:justify-between'>
+      <footer className='xl:justify-between'>
           <div className='p-5 flex flex-col'>
               <div className='relative h-10 w-20 cursor-pointer'>
               <Image
@@ -81,7 +118,32 @@ function Footer() {
                   <h1 className='footer'>Security</h1>
               </div>
           </div>
-      </div>
+          <div className=''>
+                        {/* social links*/}
+          <div className='flex justify-center space-x-2 p-8'>
+          {socialAccounts.map((account)=>(
+          <div key={account.id} className='cursor-pointer '>
+            <a href={account.href}>
+            <Image
+            className='rounded-full cursor-pointer border'
+            width={50}
+            height={50}
+            src={account.imageSrc}
+            alt={account.imageAlt}
+            objectFit= "contain"
+            />
+            </a>
+          </div>
+      ))}
+          </div>
+          <div className='text-center'>
+              <h1 className='footer'>Legal</h1>
+              <h1 className='footer'>Cookie Declaration</h1>
+              <h1 className='text-lg text-gray-500 mt-8 cursor-pointer'>© 2022 Bolt Technology OÜ</h1>
+          </div>
+          </div>
+
+      </footer>
   )
 }
 
