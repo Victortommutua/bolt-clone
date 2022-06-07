@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .options {
+      @apply h-full text-sm xl:text-lg cursor-pointer hover:bg-gray-200 text-center;
+    }
+    .icon {
+        @apply h-10 w-10 cursor-pointer;
+    }
+    .footer {
+      @apply text-lg text-gray-500 mt-4 cursor-pointer
+    }
+  }
